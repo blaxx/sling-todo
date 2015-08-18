@@ -1,0 +1,26 @@
+.list-items {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.to-do-list-item {
+    padding: 10px;
+    border-bottom: 2px dotted #cccccc;
+    position: relative;
+}
+
+.to-do-list-item form {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.to-do-list-item form.delete-form {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+.to-do-list-item i.completed-label {
+    display: inline-block;
+    margin-right: 25px;
+}
