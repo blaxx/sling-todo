@@ -1,3 +1,33 @@
+.login-controls form button[type="submit"] {
+    border: 0;
+    background-color: #bdf;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.login-controls form input[type="text"] {
+    font-size: 1em;
+    padding: 5px;
+}
+
+.login-controls form input[type="password"] {
+    font-size: 1em;
+    padding: 5px;
+}
+
+.to-do-list form.add-item-form button[type="submit"] {
+    border: 0;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #7e8;
+}
+
+.to-do-list form.add-item-form input[type="text"] {
+    min-width: 40%;
+    font-size: 1em;
+    padding: 5px;
+}
+
 .list-items {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -14,13 +44,38 @@
     margin-right: 25px;
 }
 
+.to-do-list-item form.completed-form button[type="submit"] {
+    border: 0;
+    background-color: #7e8;
+    padding: 5px;
+    font-weight: bold;
+}
+
 .to-do-list-item form.delete-form {
     position: absolute;
     right: 25px;
     top: 10px;
 }
 
+.to-do-list-item form.delete-form button[type="submit"] {
+    border: 0;
+    background-color: #fff;
+    color: #888;
+    font-weight: bold;
+}
+
 .to-do-list-item i.completed-label {
     display: inline-block;
     margin-right: 25px;
+    color: #888;
+}
+
+.logout-controls form {
+    float: right;
+}
+
+.logout-controls form button[type="submit"] {
+    border: 0;
+    background-color: #bdf;
+    padding: 5px;
 }

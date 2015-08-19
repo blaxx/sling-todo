@@ -5,8 +5,8 @@
     <sling:getResource base="${resource}" path="items" var="listItems" />
     <c:set var="itemCount" value="0" />
     <h2>To Do List</h2>
-    <form method="post" action="${resource.path}">
-        <input type="text" name="title" placeholder="What needs to be done?">
+    <form method="post" action="${resource.path}" class="add-item-form">
+        <input type="text" name="title" placeholder="What needs to be done?" required>
         <button type="submit">Add</button>
     </form>
     <section class="list-items">

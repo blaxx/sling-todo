@@ -16,7 +16,7 @@
 
     if (newTitle == null || newTitle.equals("")) {
         mResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        //TODO: Error Handling
+        mResponse.getWriter().write("TODO item title is a required field");
         return;
     }
 
