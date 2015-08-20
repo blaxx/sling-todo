@@ -10,7 +10,7 @@ mvn -P autoInstallBundle clean install
 
 ## Local Environment Setup
 
-* Retrieve the latest Standalone Application jar from https://sling.apache.org/downloads.cgi
+* Retrieve the latest Standalone Application jar from https://sling.apache.org/downloads.cgi (note, this project was last tested using `org.apache.sling.launchpad-7-standalone.jar`)
 * Run the jar
     * Once run try accessing localhost:8080 - a Sling welcome page should come up
 * Visit the Sling Explorer at http://localhost:8080/.explorer.html
