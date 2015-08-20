@@ -19,7 +19,12 @@ mvn -P autoInstallBundle clean install
 * Create a new node named `install` under the apps/todo directory created in the prior step with a jcr:primaryType of `nt:folder`
 * Run the build command above
     * After a successful build the application should be accessible under localhost:8080/content/todo.html
+    * Login using username admin password admin
     
-Currently you must be logged in to use the TODO application.  To log in visit http://localhost:8080/.explorer.html and 
-use username admin password admin.
+## Misc Debugging
+
+### /var/discovery Errors
+
+If you are seeing errors in the error log indicating that `/var/discovery` can not be created, log into the explorer at http://localhost:8080/.explorer.html and create the resource `discovery` under the `var` resource with a `jcr:primaryType` of `sling:folder`.
+   
 
