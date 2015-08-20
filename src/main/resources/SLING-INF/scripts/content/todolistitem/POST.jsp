@@ -5,6 +5,7 @@
 <%@ page import="org.apache.sling.api.resource.ResourceResolver" %>
 <%@include file="/apps/todo/global.jsp"%><%
 
+    /* These are here so that I can use code completion - they needent be here however as they are all exposed by sling:defineObjects */
     SlingHttpServletRequest mRequest = (SlingHttpServletRequest) request;
     SlingHttpServletResponse mResponse = (SlingHttpServletResponse) response;
     Resource mResource = resource;
