@@ -1,7 +1,5 @@
 <%@include file="/apps/todo/global.jsp"%>
-<jsp:useBean id="todoitem" class="com.icfi.sling.todo.content.todolistitem.TodoListItem">
-    <jsp:setProperty name="todoitem" property="resource" value="${resource}"/>
-</jsp:useBean>
+<sling:adaptTo adaptable="${resource}" adaptTo="com.icfi.sling.todo.model.list.TodoListItem" var="todoitem" />
 <div class="to-do-list-item">
     <c:choose>
         <c:when test="${todoitem.done}">

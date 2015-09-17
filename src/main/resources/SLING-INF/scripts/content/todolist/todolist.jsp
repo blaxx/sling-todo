@@ -1,7 +1,5 @@
 <%@include file="/apps/todo/global.jsp"%>
-<jsp:useBean id="todolist" class="com.icfi.sling.todo.content.todolist.TodoList">
-    <jsp:setProperty name="todolist" property="resource" value="${resource}"/>
-</jsp:useBean>
+<sling:adaptTo adaptable="${resource}" adaptTo="com.icfi.sling.todo.model.list.TodoList" var="todolist" />
 <div class="to-do-list">
     <h2>To Do List</h2>
     <form method="post" action="${resource.path}" class="add-item-form">

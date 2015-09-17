@@ -1,5 +1,6 @@
 package com.icfi.sling.todo.content.todolist;
 
+import com.icfi.sling.todo.model.list.TodoList;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -9,8 +10,6 @@ import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 @SlingServlet(
         resourceTypes = "todo/content/todolist",
@@ -26,23 +25,9 @@ public class NewListItemServlet extends SlingAllMethodsServlet {
             response.getWriter().write("TODO item title is a required field");
         }
 
-        Resource itemsResource = request.getResource().getChild("items");
+        TodoList todoList = request.getResource().adaptTo(TodoList.class);
 
-        if (itemsResource == null) {
-            Map<String, Object> properties = new HashMap<String, Object>();
-            properties.put("jcr:primaryType", "nt:unstructured");
-
-            itemsResource = request.getResourceResolver().create(request.getResource(), "items", properties);
-            request.getResourceResolver().commit();
-        }
-
-        Map<String, Object> newItemProperties = new HashMap<String, Object>();
-        newItemProperties.put("jcr:primaryType", "nt:unstructured");
-        newItemProperties.put("title", newTitle);
-        newItemProperties.put("sling:resourceType", "todo/content/todolistitem");
-
-        request.getResourceResolver().create(itemsResource, "item" + System.currentTimeMillis(), newItemProperties);
-        request.getResourceResolver().commit();
+        todoList.add(newTitle);
 
         Resource parent = getTodoPageResource(request.getResource());
 
