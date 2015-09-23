@@ -1,33 +1,25 @@
 <%@include file="/apps/todo/global.jsp"%><%
 %><!DOCTYPE html>
-<html>
+<html ng-app="todoApp">
     <head>
-        <title>Apache Sling TODO List Application - Backing Beans & Servlets Variant</title>
+        <title>Apache Sling TODO List Application - Angular Application Variant</title>
         <link rel="stylesheet" href="/apps/${resource.resourceType}/css/site.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+        <script src="/apps/${resource.resourceType}/js/controllers/loginCtrl.js"></script>
+        <script src="/apps/${resource.resourceType}/js/controllers/todoListCtrl.js"></script>
+        <script src="/apps/${resource.resourceType}/js/services/authenticationService.js"></script>
+        <script src="/apps/${resource.resourceType}/js/app.js"></script>
     </head>
     <body>
         <h1>Apache Sling TODO List Application - Backing Beans &amp; Servlets Variant</h1>
-        <c:choose>
-            <c:when test="${isAnonymous}">
-                <p>You must be logged in to use this application.</p>
-                <div class="login-controls">
-                    <form method="post" action="/j_security_check">
-                        <input type="text" name="j_username" placeholder="User Name" required/>
-                        <input type="password" name="j_password" placeholder="Password" required />
-                        <input type="hidden" name="sling.auth.redirect" value="${resource.path}.html" />
-                        <button type="submit">Sign In</button>
-                    </form>
-                </div>
-            </c:when>
-            <c:otherwise>
-                <sling:include path="todolist" resourceType="todo/content/todolist" />
-                <div class="logout-controls">
-                    <form method="post" action="/system/sling/logout.html">
-                        <input type="hidden" name="resource" value="${resource.path}.html" />
-                        <button type="submit">Logout</button>
-                    </form>
-                </div>
-            </c:otherwise>
-        </c:choose>
+        <div ui-view></div>
+        <script id="login.html" type="text/ng-template">
+            <sling:include path="." resourceType="todo/state/login" />
+        </script>
+        <script id="todolist.html" type="text/ng-template">
+            <sling:include path="." resourceType="todo/state/todolist" />
+        </script>
     </body>
 </html>

@@ -1,4 +1,8 @@
 <%@include file="/apps/todo/global.jsp"%>
+A TODO LIST
+<%--
+--%>
+<%--
 <sling:adaptTo adaptable="${resource}" adaptTo="com.icfi.sling.todo.model.list.TodoList" var="todolist" />
 <div class="to-do-list">
     <h2>To Do List</h2>
@@ -22,3 +26,4 @@
         </c:if>
     </section>
 </div>
+--%>
