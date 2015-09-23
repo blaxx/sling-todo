@@ -15,7 +15,7 @@
         <script src="/apps/${resource.resourceType}/js/app.js"></script>
     </head>
     <body>
-        <h1>Apache Sling TODO List Application - Backing Beans &amp; Servlets Variant</h1>
+        <h1>Apache Sling TODO List Application - Angular Application Variant</h1>
         <div ui-view></div>
         <script id="login.html" type="text/ng-template">
             <sling:include path="." resourceType="todo/state/login" />
