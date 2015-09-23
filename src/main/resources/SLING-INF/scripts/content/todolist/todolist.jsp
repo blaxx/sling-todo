@@ -1,7 +1,5 @@
 <%@include file="/apps/todo/global.jsp"%>
-A TODO LIST
-<%--
---%>
+<todo-list list-resource="${resource.path}"></todoList>
 <%--
 <sling:adaptTo adaptable="${resource}" adaptTo="com.icfi.sling.todo.model.list.TodoList" var="todolist" />
 <div class="to-do-list">

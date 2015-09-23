@@ -4,7 +4,6 @@ import com.icfi.sling.todo.model.list.TodoList;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 
 import javax.servlet.ServletException;
@@ -28,22 +27,6 @@ public class NewListItemServlet extends SlingAllMethodsServlet {
         TodoList todoList = request.getResource().adaptTo(TodoList.class);
 
         todoList.add(newTitle);
-
-        Resource parent = getTodoPageResource(request.getResource());
-
-        if (parent != null) {
-            response.sendRedirect(parent.getPath() + ".html");
-        }
-    }
-
-    private static Resource getTodoPageResource(Resource resource) {
-        Resource parent = resource.getParent();
-
-        while (parent != null && !parent.isResourceType("todo/page/home")) {
-            parent = parent.getParent();
-        }
-
-        return parent;
     }
 
 }

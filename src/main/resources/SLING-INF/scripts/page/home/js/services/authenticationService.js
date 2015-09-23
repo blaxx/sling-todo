@@ -12,6 +12,7 @@ angular.module( 'todo.services.authentication', [] )
 
         this.login = function( username, password ) {
 
+            /*
             return $http( {
                 method: 'POST',
                 url: loginPath,
@@ -34,15 +35,16 @@ angular.module( 'todo.services.authentication', [] )
                     }
 
                 } );
+*/
 
-            /*
-            $http.post( loginPath, {
+
+            return $http.post( loginPath, {
                 "j_username": username,
                 "j_password": password
             } )
                 .then( function( response ) {
 
-                    if ( response.status < 400 ) {
+                    if ( Number( response.status ) < 400 ) {
                         authenticated = true;
                     }
                     else {
@@ -50,13 +52,12 @@ angular.module( 'todo.services.authentication', [] )
                     }
 
                 } );
-            */
 
         };
 
         this.logout = function() {
 
-            return $http.post( logoutPath )
+            $http.post( logoutPath )
                 .then( function( response ) {
                     if ( response.status < 400 ) {
                         authenticated = false;

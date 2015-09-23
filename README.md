@@ -23,6 +23,12 @@ mvn -P autoInstallBundle clean install
     
 ## Misc Debugging
 
+### Running in Debug Mode
+
+```
+java -Xmx384M -agentlib:jdwp=transport=dt_socket,address=30303,server=y,suspend=n -jar org.apache.sling.launchpad-7-standalone.jar
+```
+
 ### /var/discovery Errors
 
 If you are seeing errors in the error log indicating that `/var/discovery` can not be created, log into the explorer at http://localhost:8080/.explorer.html and create the resource `discovery` under the `var` resource with a `jcr:primaryType` of `sling:folder`.
