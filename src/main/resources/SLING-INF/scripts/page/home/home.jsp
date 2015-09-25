@@ -2,7 +2,7 @@
 %><!DOCTYPE html>
 <html ng-app="todoApp">
     <head>
-        <title>Apache Sling TODO List Application - Angular Application Variant</title>
+        <title>Apache Sling TODO List Application - Sling Angular Application Variant</title>
         <link rel="stylesheet" href="/apps/${resource.resourceType}/css/site.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
@@ -15,7 +15,7 @@
         <script src="/apps/${resource.resourceType}/js/app.js"></script>
     </head>
     <body>
-        <h1>Apache Sling TODO List Application - Angular Application Variant</h1>
+        <h1>Apache Sling TODO List Application - Sling Angular Application Variant</h1>
         <div ui-view></div>
         <script id="login.html" type="text/ng-template">
             <sling:include path="." resourceType="todo/state/login" />
