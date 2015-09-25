@@ -12,9 +12,9 @@ angular.module( 'todo.directives.todolist', [ 'todo.services.todolist' ] )
             link: function( scope, element, attrs ) {
 
                 var refreshList = function() {
-                    $http.get( scope.listResource + '.model.json' )
-                        .then( function( response ) {
-                            scope.todolist = response.data;
+                    TodoListService.getTodoList( scope.listResource )
+                        .then( function( list ) {
+                            scope.todolist = list;
                         } );
                 };
 
