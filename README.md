@@ -39,7 +39,7 @@ Much of the logic contained in the backing Classes and Servlets in the variant/b
 into domain objects to which Resources may be adapted.  These objects provide a domain specific API abstraction over 
 the raw Resource objects.
 
-### variant/slingAngular
+### variant/modelAngular
 
 This branch reworks the ToDo application changing it from an application relying on classic POSTs and page turns into 
 a Single Page Application leveraging the Angular framework.  
