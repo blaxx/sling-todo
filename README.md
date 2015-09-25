@@ -43,6 +43,11 @@ the raw Resource objects.
 
 This branch reworks the ToDo application changing it from an application relying on classic POSTs and page turns into 
 a Single Page Application leveraging the Angular framework.  
+
+### variant/slingAngular
+
+This branch presents another take on the Angular Application variant making use of the OOB Sling POST servlet in 
+lieu of custom servlets and models.  
     
 ## Misc Debugging
 
