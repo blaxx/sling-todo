@@ -2,11 +2,11 @@
 %><!DOCTYPE html>
 <html>
     <head>
-        <title>Apache Sling TODO List Application - Backing Beans & Servlets Variant</title>
+        <title>Apache Sling TODO List Application - Adaptation Variant</title>
         <link rel="stylesheet" href="/apps/${resource.resourceType}/css/site.css">
     </head>
     <body>
-        <h1>Apache Sling TODO List Application - Backing Beans &amp; Servlets Variant</h1>
+        <h1>Apache Sling TODO List Application - Adaptation Variant</h1>
         <c:choose>
             <c:when test="${isAnonymous}">
                 <p>You must be logged in to use this application.</p>
