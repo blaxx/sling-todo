@@ -1,6 +1,6 @@
 # Sling TODO
 
-A TODO List application in the spirit of TODO MVC illustrating the basics of Sling based application development.
+A TODO List application in the spirit of TODO MVC illustrating the basics of Sling based development.
 
 ## Installation
 
@@ -10,7 +10,9 @@ mvn -P autoInstallBundle clean install
 
 ## Local Environment Setup
 
-* Retrieve the latest Standalone Application jar from https://sling.apache.org/downloads.cgi (note, this project was last tested using `org.apache.sling.launchpad-7-standalone.jar`)
+The following instructions are applicable to all variants unless superseded by the variant's README.
+
+* Retrieve the latest Standalone Application jar from https://sling.apache.org/downloads.cgi (note, this project was last tested using `org.apache.sling.launchpad-8-standalone.jar`)
 * Run the jar
     * Once run try accessing localhost:8080 - a Sling welcome page should come up
 * Visit the Sling Explorer at http://localhost:8080/.explorer.html
