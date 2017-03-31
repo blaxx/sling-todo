@@ -4,12 +4,15 @@ A TODO List application in the spirit of TODO MVC illustrating the basics of Sli
 
 ## Installation
 
+Prior to installing, select a variant branch, do not attempt to build the master branch. 
+The following instructions are applicable to all variants unless superseded by the variant's README.
+
 ```
 mvn -P autoInstallBundle clean install
 ```
 
 ## Local Environment Setup
-
+  
 The following instructions are applicable to all variants unless superseded by the variant's README.
 
 * Retrieve the latest Standalone Application jar from https://sling.apache.org/downloads.cgi (note, this project was last tested using `org.apache.sling.launchpad-8-standalone.jar`)
