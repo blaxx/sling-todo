@@ -37,6 +37,9 @@ The following instructions are applicable to all variants unless superseded by t
 The Pure JSP branch demonstrates a ToDo application written using nothing other than jsps, the page context properties 
 exposed by Sling, and the jsp tags contained in Sling.
 
+While this branch does not follow particularly good development practices it is a very concrete demonstration 
+of the relationship between resource types and rendering / behavior in Sling.
+
 ### variant/backingBeansAndServlets
 
 In this variant logic which lived largely in JSP scriptlets in the variant/pureJsp branch is moved into backing Classes 
@@ -76,4 +79,10 @@ java -Xmx384M -agentlib:jdwp=transport=dt_socket,address=30303,server=y,suspend=
 
 If you are seeing errors in the error log indicating that `/var/discovery` can not be created, log into the explorer at http://localhost:8080/.explorer.html and create the resource `discovery` under the `var` resource with a `jcr:primaryType` of `sling:folder`.
    
+## Contributing
 
+We are always looking for new variants or updates to existing variants.  The fork and pull model is used to 
+accept updates.  Each variant branch evolves independently so if you are making an update to a particular 
+variant submit your pull request to that branch.  If you are submitting a new variant, submit a pull request 
+ to a new branch following the naming convention `variant/[variantName]` where variantName is a verbose 
+ name for your variant.  Once accepted we will update the readme in the master branch with variant details. 
