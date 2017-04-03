@@ -1,6 +1,10 @@
 # Sling TODO
 
-A TODO List application in the spirit of TODO MVC illustrating the basics of Sling based development.
+A TODO List application in the spirit of TODO MVC illustrating the basics of Sling based development. 
+Each `variant` branch demonstrates a different way of building a TODO application using the mechanisms 
+exposed by Apache Sling.  Which model is "right" is very dependent on your situation or technical requirements.  
+As such this collection makes no effort to point at on single way of doing things but instead illustrates  
+the flexibility provided by Sling.
 
 ## Installation
 
@@ -38,6 +42,12 @@ exposed by Sling, and the jsp tags contained in Sling.
 In this variant logic which lived largely in JSP scriptlets in the variant/pureJsp branch is moved into backing Classes 
  and Servlets.  
  
+### variant/backingModelsServletsAndHTL
+    
+This branch follows the same model as variant/backingBeansAndServlets but replaces jsp with HTL and 
+standard Java beans with Sling Models.
+
+
 ### variant/adaptation
 
 Much of the logic contained in the backing Classes and Servlets in the variant/backingBeansAndServlets branch is moved 
