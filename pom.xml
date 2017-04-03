@@ -33,6 +33,9 @@
                             SLING-INF/scripts;overwrite:=true;uninstall:=true;path:=/apps/todo,
                             SLING-INF/content;overwrite:=false;uninstall:=false;path:=/content
                         </Sling-Initial-Content>
+                        <Sling-Model-Packages>
+                            com.icfi.sling.todo
+                        </Sling-Model-Packages>
                     </instructions>
                 </configuration>
             </plugin>
@@ -107,6 +110,17 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.models.api</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+
     </dependencies>
     <profiles>
         <profile>

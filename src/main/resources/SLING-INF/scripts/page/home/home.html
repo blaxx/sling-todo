@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apache Sling TODO List Application - Backing Models, Servlets & HTL Variant</title>
+    <link rel="stylesheet" href="/apps/${resource.resourceType}/css/site.css">
+</head>
+<body data-sly-use.todoapp="com.icfi.sling.todo.content.todoapp.TodoApp">
+    <h1>Apache Sling TODO List Application - Backing Models, Servlets &amp; HTL Variant</h1>
+    <sly data-sly-test="${todoapp.anonymous}">
+        <p>You must be logged in to use this application.</p>
+        <div class="login-controls">
+            <form method="post" action="/j_security_check">
+                <input type="text" name="j_username" placeholder="User Name" required/>
+                <input type="password" name="j_password" placeholder="Password" required />
+                <input type="hidden" name="sling.auth.redirect" value="${resource.path}.html" />
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </sly>
+    <sly data-sly-test="${!todoapp.anonymous}">
+        <sly data-sly-resource="${'todolist' @ resourceType='todo/content/todolist'}"></sly>
+        <div class="logout-controls">
+            <form method="post" action="/system/sling/logout.html">
+                <input type="hidden" name="resource" value="${resource.path}.html" />
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </sly>
+</body>
+</html>

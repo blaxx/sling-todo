@@ -1,27 +1,26 @@
 package com.icfi.sling.todo.content.todolistitem;
 
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.models.annotations.Default;
+import org.apache.sling.models.annotations.Model;
 
+import javax.inject.Inject;
+
+@Model(adaptables = Resource.class)
 public class TodoListItem {
 
-    private Resource resource;
-    private ValueMap valueMap;
+    @Inject @Default(booleanValues = false)
+    private Boolean isDone;
 
-    public Resource getResource() {
-        return resource;
-    }
-
-    public void setResource(Resource resource) {
-        this.resource = resource;
-        this.valueMap = resource.adaptTo(ValueMap.class);
-    }
+    @Inject @Default(values = "Title")
+    private String title;
 
     public boolean isDone() {
-        return valueMap.get("isDone", false);
+        return isDone;
     }
 
     public String getTitle() {
-        return valueMap.get("title", "Title");
+        return title;
     }
+
 }

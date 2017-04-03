@@ -1,0 +1,16 @@
+<div class="to-do-list" data-sly-use.todolist="com.icfi.sling.todo.content.todolist.TodoList">
+    <h2>To Do List HTL</h2>
+    <form method="post" action="${resource.path}" class="add-item-form">
+        <input type="text" name="title" placeholder="What needs to be done?" required>
+        <button type="submit">Add</button>
+    </form>
+    <section class="list-items">
+        <sly data-sly-repeat.currentListItem="${todolist.items}" data-sly-resource="${currentListItem.path @ resourceType='todo/content/todolistitem'}"></sly>
+        <p data-sly-test="${!todolist.items}">
+            Your TODO list is currently empty.  Enjoy your free time.
+        </p>
+    </section>
+    <section class="list-statistics">
+        <span data-sly-test="${todolist.items}">${todolist.itemsRemaining} remaining</span>
+    </section>
+</div>

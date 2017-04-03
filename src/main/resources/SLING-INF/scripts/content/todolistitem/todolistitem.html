@@ -1,0 +1,12 @@
+<div class="to-do-list-item" data-sly-use.todoitem="com.icfi.sling.todo.content.todolistitem.TodoListItem">
+    <i data-sly-test="${todoitem.done}">Done</i>
+    <form data-sly-test="${!todoitem.done}" class="completed-form" method="post" action="${resource.path}">
+        <input type="hidden" name="isDone" value="true" />
+        <button type="submit">Done</button>
+    </form>
+    <span class="title">${todoitem.title}</span>
+    <form class="delete-form" method="post" action="${resource.path}">
+        <input type="hidden" name="delete" value="true" />
+        <button type="submit">X</button>
+    </form>
+</div>

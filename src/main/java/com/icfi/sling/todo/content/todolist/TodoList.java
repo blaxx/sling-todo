@@ -1,33 +1,18 @@
 package com.icfi.sling.todo.content.todolist;
 
-import com.icfi.sling.todo.content.todolistitem.TodoListItem;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Optional;
 
-import java.util.ArrayList;
+import javax.inject.Inject;
 import java.util.List;
 
+@Model(adaptables = Resource.class)
 public class TodoList {
 
+    @Inject @Optional
     private List<Resource> items;
-    private Resource resource;
-    private ValueMap valueMap;
-
-    public Resource getResource() {
-        return resource;
-    }
-
-    public void setResource(Resource resource) {
-        this.resource = resource;
-        this.valueMap = resource.adaptTo(ValueMap.class);
-        this.items = new ArrayList<Resource>();
-
-        if (resource.getChild("items") != null) {
-            for(Resource currentItemResource : resource.getChild("items").getChildren()) {
-                items.add(currentItemResource);
-            }
-        }
-    }
 
     public List<Resource> getItems() {
         return items;
