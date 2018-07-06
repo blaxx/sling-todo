@@ -5,6 +5,8 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
@@ -17,9 +19,14 @@ import java.util.Map;
         methods = "POST"
 )
 public class NewListItemServlet extends SlingAllMethodsServlet {
+	
+	private Logger LOG = LoggerFactory.getLogger(this.getClass());
 
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        String newTitle = request.getParameter("title");
+       
+    	String newTitle = request.getParameter("title");
+        
+        LOG.info("[doPost] - new title -> {}", newTitle);
 
         if (newTitle == null || newTitle.equals("")) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
