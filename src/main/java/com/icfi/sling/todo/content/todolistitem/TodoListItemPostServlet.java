@@ -17,6 +17,8 @@ import java.io.IOException;
 public class TodoListItemPostServlet extends SlingAllMethodsServlet {
 
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+    	
+    	Resource parent = getTodoPageResource(request.getResource());
 
         if ("true".equals(request.getParameter("isDone"))) {
             ModifiableValueMap valueMap = request.getResource().adaptTo(ModifiableValueMap.class);
@@ -28,7 +30,6 @@ public class TodoListItemPostServlet extends SlingAllMethodsServlet {
             request.getResourceResolver().commit();
         }
 
-        Resource parent = getTodoPageResource(request.getResource());
 
         if (parent != null) {
             response.sendRedirect(parent.getPath() + ".html");
